@@ -42,11 +42,11 @@ jobs:
       - run: npm test
         env:
           CI: true
-#      - name: Gather coverage
-#        if: matrix.node-version == '15.x'
-#        run: npm run coveralls
-#      - name: Coveralls
-#        uses: coverallsapp/github-action@master
-#        if: matrix.node-version == '15.x'
-#        with:
-#          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Gather coverage
+        if: matrix.node-version == '15.x'
+        run: npm run coveralls
+      - name: Coveralls
+        uses: coverallsapp/github-action@master
+        if: matrix.node-version == '15.x'
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
