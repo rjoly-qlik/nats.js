@@ -52,8 +52,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload coverage
-        if: matrix.node-version == '15.x'
         uses: coverallsapp/github-action@v1.1.2
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.github_token }}
           path-to-lcov: ./cov.lcov
